@@ -34,7 +34,6 @@ import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-//checking that I can commit
 
 /**
  * A login screen that offers login via email/password.
