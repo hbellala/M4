@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dang These Rats</string>
+    <string name="app_name">These Darn Rats</string>
 
     <!-- Strings related to login -->
     <string name="prompt_username">Username</string>
