@@ -1,5 +1,6 @@
 package com.example.hemanthbellala.m4cs2340;
 
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
 
 
 /**
@@ -53,11 +55,13 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
 
     public void onRegisterPressed(View view) {
         Log.d("Creating account", "Add new account");
+        Model model = Model.getInstance();
 
         _user.set_userName(userNameField.getText().toString());
         _user.setUserType((UserType) userTypeSpinner.getSelectedItem());
         _user.set_password((String) passwordField.getText().toString());
 
+        model.addUser(_user);
 
         finish();
     }

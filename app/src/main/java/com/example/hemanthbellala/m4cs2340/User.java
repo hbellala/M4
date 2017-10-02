@@ -10,7 +10,7 @@ import java.util.List;
  * Created by hemanthbellala on 10/1/17.
  */
 
-public class User implements Parcelable{
+public class User {
     public static List<String> userTypes = Arrays.asList("Admin", "User");
 
     //User name
@@ -19,6 +19,9 @@ public class User implements Parcelable{
     private String _password;
     //enum for user type
     private UserType _userType;
+
+    /** the list of all registered students for this course */
+    private  List<User> _users;
     /* **********************
      * Getters and setters
      */
@@ -39,36 +42,43 @@ public class User implements Parcelable{
         _userName = uN;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    private User(Parcel in) {
-        _userName = in.readString();
-        _password = in.readString();
-        _userType = (UserType) in.readSerializable();
-    }
+//
+//    private User(Parcel in) {
+//        _userName = in.readString();
+//        _password = in.readString();
+//        _userType = (UserType) in.readSerializable();
+//    }
 
     public User() {
         this("Enter your User name", "Enter Your Password", UserType.USER);
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(_userName);
-        parcel.writeString(_password);
-        parcel.writeSerializable(_userType);
+
+//    public static final Parcelable.Creator<User> CREATOR
+//            = new Parcelable.Creator<User>() {
+//        public User createFromParcel(Parcel in) {
+//            return new User(in);
+//        }
+//
+//        public User[] newArray(int size) {
+//            return new User[size];
+//        }
+//    };
+
+    public boolean addUser(User user) {
+
+        //go through each student looking for duplicate name   O(n)
+        for (User s : _users) {
+            if (s.getUserName().equals(user.getUserName())) {
+                //oops found duplicate name, don't add and return failure signal
+                return false;
+            }
+        }
+        //never found the name so safe to add it.
+        _users.add(user);
+
+        //return the success signal
+        return true;
     }
 
-    public static final Parcelable.Creator<User> CREATOR
-            = new Parcelable.Creator<User>() {
-        public User createFromParcel(Parcel in) {
-            return new User(in);
-        }
-
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
 }
