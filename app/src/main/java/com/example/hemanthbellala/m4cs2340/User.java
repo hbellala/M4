@@ -32,7 +32,7 @@ public class User {
     public String getPassword() {return _password; }
     public void set_password(String major) { _password = major; }
 
-    public void setUserType(UserType u) {_userType = u;}
+    public void set_UserType(UserType u) {_userType = u;}
     public UserType get_UserType() {return _userType;}
 
 

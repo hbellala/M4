@@ -51,18 +51,19 @@ public class Model {
      */
     public static User getCurrentUser() { return _currentUser;}
 
-    public void setCurrentCourse(User course) { _currentUser = course; }
+    public void setCurrentUser(User course) { _currentUser = course; }
 
 
 
-    /**
-     * add a student to the current course
-     *
-     * @param user the student to add
-     * @return true if student added, false if not added
-     */
-    public boolean addUser(User user) {
-        return _currentUser != null && _currentUser.addUser(user);
+//    /**
+//     * add a student to the current course
+//     *
+//     * @param user the student to add
+//     * @return true if student added, false if not added
+//     */
+    public void addUser(User user) {
+        _user.add(user);
+
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.hemanthbellala.m4cs2340;
 
+import android.content.Intent;
 import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -26,12 +27,27 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
     private Spinner userTypeSpinner;
     private User _user;
 
-    private String _userType;
+    private UserType _userType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration1);
 
+        Button registerButton = (Button) findViewById(R.id.registeration_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRegisterPressed(view);
+            }
+        });
+
+        Button cancelButton = (Button) findViewById(R.id.cancel_button);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCancelPressed(view);
+            }
+        });
 
 
         userNameField = (EditText) findViewById(R.id.username);
@@ -58,12 +74,16 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
         Model model = Model.getInstance();
 
         _user.set_userName(userNameField.getText().toString());
-        _user.setUserType((UserType) userTypeSpinner.getSelectedItem());
-        _user.set_password((String) passwordField.getText().toString());
+        if (userTypeSpinner.getSelectedItem().equals("User")) {
+            _user.set_UserType(UserType.USER);
+        } else {
+            _user.set_UserType(UserType.ADMIN);
+        }
+        _user.set_password(passwordField.getText().toString());
 
         model.addUser(_user);
-
-        finish();
+        System.out.println(_user.get_UserType());
+        startActivity(new Intent(this, PostLoginActivity.class));
     }
 
     /**
@@ -73,16 +93,16 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
      */
     public void onCancelPressed(View view) {
         Log.d("Edit", "Cancel Registraction");
-        finish();
+        startActivity(new Intent(this, WelcomeActivity.class));
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-        _userType = parent.getItemAtPosition(i).toString();
+        _userType = (UserType) parent.getItemAtPosition(i);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        _userType = "NA";
+        _userType = UserType.ADMIN;
     }
 }
