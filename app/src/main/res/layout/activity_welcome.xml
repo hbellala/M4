@@ -15,4 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Click to Login" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="Would you like to Register?"
+        android:textSize="30sp" />
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click to Register" />
 </LinearLayout>

@@ -19,16 +19,27 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         Button loginButton = (Button) findViewById(R.id.login_button);
+        Button registerButton = (Button) findViewById(R.id.register_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToLoginScreen();
             }
         });
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToRegisterScreen();
+            }
+        });
     }
 
     private void goToLoginScreen() {
         startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    private void goToRegisterScreen() {
+        startActivity(new Intent(this, RegistrationActivity.class));
     }
 
 
