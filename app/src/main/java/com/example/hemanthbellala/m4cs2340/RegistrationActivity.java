@@ -72,7 +72,7 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
      * @param view the button pressed
      */
     public void onCancelPressed(View view) {
-        Log.d("Edit", "Cancel Student");
+        Log.d("Edit", "Cancel Registraction");
         finish();
     }
 

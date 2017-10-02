@@ -18,10 +18,10 @@ public class Model {
     public static Model getInstance() { return _instance; }
 
     /** holds the list of all courses */
-    private List<User> _user;
+    private static List<User> _user;
 
     /** the currently selected course, defaults to first course */
-    private User _currentUser;
+    private static User _currentUser;
 
     /** Null Object pattern, returned when no course is found */
     // private final UserType theNullCourse = new Course("No Such Course", "9999", SchoolCode.XX);
@@ -41,7 +41,7 @@ public class Model {
      * get the courses
      * @return a list of the courses in the app
      */
-    public List<User> getCourses() { return _user; }
+    public static List<User> getUsers() { return _user; }
 
 
 
@@ -49,7 +49,7 @@ public class Model {
      *
      * @return  the currently selected course
      */
-    public User getCurrentUser() { return _currentUser;}
+    public static User getCurrentUser() { return _currentUser;}
 
     public void setCurrentCourse(User course) { _currentUser = course; }
 

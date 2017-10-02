@@ -194,12 +194,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isUsernameValid(String username) {
         //TODO: Replace this with your own logic
-        return username.equals("user");
+        List<User> us = Model.getUsers();
+        for (User u: us) {
+            if (u.getUserName().equals(username)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.equals("pass");
+        List<User> us = Model.getUsers();
+        for (User u: us) {
+            if (u.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
