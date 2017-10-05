@@ -27,5 +27,16 @@ public class SightingDataItem {
         longitude = lon;
     }
 
+    public int getKey() {
+        return key;
+    }
 
+    public String getAddress() {
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        return key + ": " + address;
+    }
 }

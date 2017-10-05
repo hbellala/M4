@@ -23,7 +23,7 @@ public class Model {
     /** the currently selected course, defaults to first course */
     private static User _currentUser;
 
-    private List<SightingDataItem> sightings;
+    private static List<SightingDataItem> sightings;
 
     /** Null Object pattern, returned when no course is found */
     // private final UserType theNullCourse = new Course("No Such Course", "9999", SchoolCode.XX);

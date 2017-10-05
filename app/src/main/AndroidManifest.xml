@@ -29,11 +29,12 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".WelcomeActivity"></activity>
+            android:parentActivityName=".WelcomeActivity" />
         <activity
             android:name=".RegistrationActivity"
-            android:label="@string/registration_page"></activity>
-        <activity android:name=".DataItemListActivity"></activity>
+            android:label="@string/registration_page" />
+        <activity android:name=".DataItemListActivity" />
+        <activity android:name=".DataItemDetailActivity"></activity>
     </application>
 
 </manifest>
