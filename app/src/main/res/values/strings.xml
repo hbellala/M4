@@ -20,7 +20,7 @@
     //For registration stuff
     <string name="registration_page">Register</string>
     <string name="password">Enter Your Password</string>
-    <string name="account_type_key" translatable="false" >User</string>
+    <string name="account_type_key" translatable="false">User</string>
     <array name="account_type">
         <item>Admin</item>
         <item>User</item>
@@ -29,7 +29,7 @@
         <item>pref_unit_metric</item>
         <item>pref_unit_imperial</item>
     </array>
-    <string name="entered_username" translatable="false" >Enter your UserName</string>
-    <string name="entered_password" translatable="false" >Enter Your Password</string>
+    <string name="entered_username" translatable="false">Enter your UserName</string>
+    <string name="entered_password" translatable="false">Enter Your Password</string>
 
 </resources>

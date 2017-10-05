@@ -5,9 +5,17 @@
     android:weightSum="1">
 
     <Button
+        android:id="@+id/load_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.12"
+        android:onClick="onLoadButtonPressed"
+        android:text="Load Data" />
+
+    <Button
         android:id="@+id/logout_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hit Me to Logout"
-        android:layout_weight="0.12" />
+        android:layout_weight="0.12"
+        android:text="Hit Me to Logout" />
 </LinearLayout>
