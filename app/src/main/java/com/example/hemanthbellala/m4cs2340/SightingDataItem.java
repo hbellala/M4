@@ -5,6 +5,7 @@ package com.example.hemanthbellala.m4cs2340;
  */
 
 public class SightingDataItem {
+    private int index;
     private int key;
     private String date;
     private String locationType;
@@ -15,7 +16,8 @@ public class SightingDataItem {
     private String latitude;
     private String longitude;
 
-    public SightingDataItem (int k, String d, String lt, String z, String a, String c, String b, String lat, String lon) {
+    public SightingDataItem (int i, int k, String d, String lt, String z, String a, String c, String b, String lat, String lon) {
+        index = i;
         key = k;
         date = d;
         locationType = lt;
@@ -33,6 +35,38 @@ public class SightingDataItem {
 
     public String getAddress() {
         return address;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getLocationType() {
+        return locationType;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getBorough() {
+        return borough;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
     }
 
     @Override

@@ -57,6 +57,7 @@ public class PostLoginActivity extends AppCompatActivity {
 
             String line;
             br.readLine(); //get rid of header line
+            int count = 0;
             while ((line = br.readLine()) != null) {
                 //Log.d(this.TAG, line);
                 String[] tokens = line.split(",");
@@ -64,8 +65,11 @@ public class PostLoginActivity extends AppCompatActivity {
                     continue;
                 }
                 try {
-                    model.addSighting(new SightingDataItem(Integer.parseInt(tokens[0]), tokens[1], tokens[7], tokens[8], tokens[9],
-                            tokens[16], tokens[23], tokens[49], tokens[50]));
+                    if (tokens[0] != null) {
+                        model.addSighting(new SightingDataItem(count, Integer.parseInt(tokens[0]), tokens[1], tokens[7], tokens[8], tokens[9],
+                                tokens[16], tokens[23], tokens[49], tokens[50]));
+                    }
+
                 } catch (Exception e) {
                     Log.e(this.TAG, "error reading assets", e);
                 }

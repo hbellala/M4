@@ -76,5 +76,9 @@ public class Model {
         return sightings;
     }
 
+    public SightingDataItem getItemById(int i) {
+        return sightings.get(i);
+    }
+
 
 }
